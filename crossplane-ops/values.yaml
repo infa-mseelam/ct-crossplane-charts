@@ -1,0 +1,17 @@
+clusterName: mseelam-cluster
+k8sVersion: "1.24"
+region: us-west-2
+controlplaneRoleArn: arn:aws:iam::530774763960:role/InfaEKSControlPlaneRole
+vpcName: "vpc1"
+vpcId: "vpcxxxxxxx"
+subnetIDs:
+  - subnet-0e15dc2a097ca0ff5
+  - subnet-069b173938af709e7
+  - subnet-0951fcf098fcee45a
+
+endpointPrivateAccess: true
+endpointPublicAccess: false
+tags:
+  bu: intcloud
+  be: iics
+  owner: mseelam

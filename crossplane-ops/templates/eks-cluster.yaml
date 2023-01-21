@@ -1,0 +1,25 @@
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: Cluster
+metadata:
+  name: {{ .Values.clusterName }}
+  namespace: {{ .Values.clusterName }}
+  annotations:
+    uptest.upbound.io/timeout: "2400"
+    crossplane.io/external-name: {{ .Values.clusterName }}
+  labels:
+    testing.upbound.io/example-name: {{ .Values.clusterName }}
+    role: {{ .Values.controlplaneRoleArn }}
+spec:
+  deletionPolicy: Orphan
+  forProvider:
+    version: {{ .Values.k8sVersion }}
+    region: {{ .Values.region }}
+    roleArn: {{ .Values.controlplaneRoleArn }}
+    vpcConfig:
+      - endpointPrivateAccess: {{ .Values.endpointPrivateAccess }}
+        endpointPublicAccess: {{ .Values.endpointPublicAccess }}
+        subnetIds: {{ .Values.subnetIDs }}
+
+    tags:
+      {{- toYaml .Values.tags | nindent 8 }}
+
