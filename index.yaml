@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  crossplane-ops:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-01-21T21:02:47.123414+05:30"
+    description: A Helm chart for Kubernetes
+    digest: ef06c9b72ab9f2c38926316b2a0ef003dfb4b3a472df75eaefc006f33372739f
+    name: crossplane-ops
+    type: application
+    urls:
+    - https://infa-mseelam.github.io/ct-crossplane-charts/crossplane-ops-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-21T21:02:47.120061+05:30"
